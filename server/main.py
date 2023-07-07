@@ -92,11 +92,3 @@ async def post_audio(file: UploadFile = File(...)):
     print(message_decoded)
 
     return "DONE"
-
-# # Post bot response; uploads video 
-# # Note: not playing in browser when using post request
-# @app.post("/post-audio/")
-# async def post_audio(file: UploadFile = File(...)):
-    
-#     print("hello")
-
