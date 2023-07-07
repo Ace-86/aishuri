@@ -6,7 +6,7 @@ import axios from "axios";
 function Controller() {
   const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState<any[]>([]);
-  const [blob, setBlob] = useState("");
+  // const [blob, setBlob] = useState("");
 
   const createBlobUrl = (data: any) => {
     const blob = new Blob([data], { type: "audio/mpeg" });
@@ -41,8 +41,8 @@ function Controller() {
             audio.src = createBlobUrl(blob);
 
             //append to audio
-            const amaraMessage = { sender: "amara", blobUrl: audio.src };
-            messagesArr.push(amaraMessage);
+            const shuriMessage = { sender: "shuri", blobUrl: audio.src };
+            messagesArr.push(shuriMessage);
             setMessages(messagesArr);
 
             //play Audio
@@ -70,14 +70,14 @@ function Controller() {
                 key={index + audio.sender}
                 className={
                   "flex flex-col " +
-                  (audio.sender == "amara" && "flex items-end ")
+                  (audio.sender == "shuri" && "flex items-end ")
                 }
               >
                 {/* Sender */}
                 <div className="mt-4">
                   <p
                     className={
-                      audio.sender == "amara"
+                      audio.sender == "shuri"
                         ? "text-right mr-2 italic text-green-500"
                         : "ml-2 italic text-blue-500"
                     }
@@ -98,7 +98,7 @@ function Controller() {
 
         {messages.length == 0 && !isLoading && (
           <div className="text-center font-light italic mt-10">
-            Amara is waiting....
+            Shuri is waiting....
           </div>
         )}
 
