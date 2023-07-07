@@ -18,11 +18,11 @@ def convert_text_to_speech(message):
     }
 
     #define voice
-    voice_rachel = "21m00Tcm4TlvDq8ikWAM"
+    voice_shuri = "1r4bnZMg57TT8qZMm6M2"
 
     #constructing headers and endpoints
     headers= { "xi-api-key": ELEVEN_LABS_API_KEY, "Content-Type": "application/json", "accept": "audio/mpeg"}
-    endpoint = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_rachel}"
+    endpoint = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_shuri}"
 
     #send request
     try: 
